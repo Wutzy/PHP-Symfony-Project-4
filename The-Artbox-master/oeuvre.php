@@ -1,6 +1,13 @@
 <?php 
-include 'header.php';  
-include 'oeuvres.php';  
+include 'header.php';
+require 'bdd.php';
+
+$sqlQuery = "SELECT * FROM `oeuvres` WHERE  `id` = ?";
+
+$oeuvresStatement = connexion()->prepare($sqlQuery);
+$oeuvresStatement->execute([$_GET["id"]]);
+
+$oeuvres = $oeuvresStatement->fetchAll();
 ?>
 
 <main>
