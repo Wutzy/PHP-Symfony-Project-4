@@ -4,6 +4,10 @@ require 'bdd.php';
 $db = connexion();
 $oeuvres = $db->query('SELECT * FROM oeuvres ORDER BY id ASC')
 ?>
+    <div id="addSection">
+        <button class="addButton"><a href="add.php">Ajouter une oeuvre</a></button>
+    </div>
+
     <div id="liste-oeuvres">
         <?php foreach ($oeuvres as $oeuvre): ?>
                  
